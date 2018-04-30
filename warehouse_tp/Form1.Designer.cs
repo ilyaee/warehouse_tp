@@ -37,7 +37,6 @@
             // 
             // textBox_login
             // 
-<<<<<<< HEAD
             this.textBox_login.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -45,14 +44,6 @@
             this.textBox_login.Name = "textBox_login";
             this.textBox_login.Size = new System.Drawing.Size(135, 22);
             this.textBox_login.TabIndex = 0;
-=======
-            this.button1.Location = new System.Drawing.Point(476, 189);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "but";
-            this.button1.UseVisualStyleBackColor = true;
->>>>>>> d0d9d583c368092157d00a8a6cba30d8ce9e8aa2
             // 
             // textBox_password
             // 
@@ -99,6 +90,7 @@
             this.button_login.TabIndex = 4;
             this.button_login.Text = "Войти";
             this.button_login.UseVisualStyleBackColor = true;
+            this.button_login.Click += new System.EventHandler(this.button_login_Click);
             // 
             // LoginForm
             // 
