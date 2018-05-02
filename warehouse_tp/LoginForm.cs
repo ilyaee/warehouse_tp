@@ -19,7 +19,8 @@ namespace warehouse_tp
 
         private void button_login_Click(object sender, EventArgs e)
         {
-
+            AdminForm adminForm = new AdminForm();
+            adminForm.Show();
         }
     }
 }
