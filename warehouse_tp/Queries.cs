@@ -16,6 +16,6 @@ namespace warehouse_tp
 
         public static string UpdateEmployee = "update tp.employees set login = @login, password = @password where ID = @ID;";
 
-        //public static string 
+        public static string PasswordCheck = "select true from tp.employees where login = @login and password = @password;";
     }
 }

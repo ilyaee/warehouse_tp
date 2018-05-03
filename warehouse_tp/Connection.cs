@@ -29,7 +29,7 @@ namespace warehouse_tp
         {
             var cmd = new MySqlCommand(Queries.AddEmployee, connection);
             cmd.Parameters.AddWithValue("@login", login);
-            cmd.Parameters.AddWithValue("@password", password);
+            cmd.Parameters.AddWithValue("@password", Authentication.Hash(password));
             connection.Open();
             cmd.ExecuteNonQuery();
             connection.Close();
@@ -48,11 +48,33 @@ namespace warehouse_tp
         {
             var cmd = new MySqlCommand(Queries.UpdateEmployee, connection);
             cmd.Parameters.AddWithValue("@login", login);
-            cmd.Parameters.AddWithValue("@password", password);
+            cmd.Parameters.AddWithValue("@password", Authentication.Hash(password));
             cmd.Parameters.AddWithValue("@ID", SelectedRow);
             connection.Open();
             cmd.ExecuteNonQuery();
             connection.Close();
+        }
+
+        public static bool PasswordCheck(string Login, string InputPass)
+        {
+            var cmd = new MySqlCommand(Queries.PasswordCheck, connection);
+            cmd.Parameters.AddWithValue("@login", Login);
+            cmd.Parameters.AddWithValue("@password", Authentication.Hash(InputPass)); //передаем хешированный пароль
+            connection.Open();
+            cmd.ExecuteNonQuery();
+            adapter = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            if (dt.Rows[0][0].ToString() != null)
+            {
+                connection.Close();
+                return true;
+            }
+            else
+            {
+                connection.Close();
+                return false;
+            }
         }
     }
 }

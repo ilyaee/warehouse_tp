@@ -19,8 +19,14 @@ namespace warehouse_tp
 
         private void button_login_Click(object sender, EventArgs e)
         {
-            AdminForm adminForm = new AdminForm();
-            adminForm.Show();
+            if (Connection.PasswordCheck(textBox_login.Text, textBox_password.Text))
+            {
+                this.Hide();
+                AdminForm adminForm = new AdminForm();  //позже накинуть проверки на символы и распределить окна
+                adminForm.Show();
+            }
+            else
+                MessageBox.Show("Неверный пароль");
         }
     }
 }
