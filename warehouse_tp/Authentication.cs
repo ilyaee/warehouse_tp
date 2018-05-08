@@ -45,16 +45,16 @@ namespace warehouse_tp
             return BitConverter.ToString(CheckSum).Replace("-", String.Empty);
         }
 
-        public static string UnHash(string Input)
-        {
-            byte[] data = Convert.FromBase64String(Input);
-            MD5 md5 = new MD5CryptoServiceProvider();
+        //public static string UnHash(string Input)
+        //{
+        //    byte[] data = Convert.FromBase64String(Input);
+        //    MD5 md5 = new MD5CryptoServiceProvider();
 
-            byte[] keys = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(hash));
-            TripleDESCryptoServiceProvider tripDes = new TripleDESCryptoServiceProvider();
-            ICryptoTransform transform = tripDes.CreateDecryptor();
-            byte[] results = transform.TransformFinalBlock(data, 0, data.Length);
-            return UTF8Encoding.UTF8.GetString(results);
-        }
+        //    byte[] keys = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(hash));
+        //    TripleDESCryptoServiceProvider tripDes = new TripleDESCryptoServiceProvider();
+        //    ICryptoTransform transform = tripDes.CreateDecryptor();
+        //    byte[] results = transform.TransformFinalBlock(data, 0, data.Length);
+        //    return UTF8Encoding.UTF8.GetString(results);
+        //}
     }
 }

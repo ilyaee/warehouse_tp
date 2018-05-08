@@ -16,5 +16,15 @@ namespace warehouse_tp
         {
             InitializeComponent();
         }
+
+        private void button_in_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_out_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

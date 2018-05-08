@@ -40,6 +40,7 @@
             this.button_in.TabIndex = 0;
             this.button_in.Text = "Приход";
             this.button_in.UseVisualStyleBackColor = true;
+            this.button_in.Click += new System.EventHandler(this.button_in_Click);
             // 
             // button_out
             // 
@@ -49,6 +50,7 @@
             this.button_out.TabIndex = 1;
             this.button_out.Text = "Реализация";
             this.button_out.UseVisualStyleBackColor = true;
+            this.button_out.Click += new System.EventHandler(this.button_out_Click);
             // 
             // Shop
             // 
