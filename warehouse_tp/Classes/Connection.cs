@@ -79,5 +79,12 @@ namespace warehouse_tp
                 return false;
             }
         }
+
+        public static void ShowRemnants()
+        {
+            adapter = new MySqlDataAdapter(Queries.ShowRemnants, connection);
+            ds = new DataSet();
+            adapter.Fill(ds);
+        }
     }
 }

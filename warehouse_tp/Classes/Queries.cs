@@ -17,5 +17,12 @@ namespace warehouse_tp
         public static string UpdateEmployee = "update tp.employees set login = @login, password = @password where ID = @ID;";
 
         public static string PasswordCheck = "select true from tp.employees where login = @login and password = @password;";
+
+
+
+        public static string ShowRemnants = "select product.name, product.price, product_in_warehouse.current_count, product_in_warehouse.warehouse_id, warehouse.warehouse_address " +
+            "from tp.product, tp.product_in_warehouse, tp.warehouse " +
+            "where product.id = product_in_warehouse.product_id and product.id = warehouse.id";
+
     }
 }

@@ -17,6 +17,12 @@ namespace warehouse_tp.After_warehouse_form
             InitializeComponent();
         }
 
+        private void Remnants_Load(object sender, EventArgs e)
+        {
+            Connection.ShowRemnants();
+            datagv_remnants.DataSource = Connection.ds.Tables[0];
+        }
+
         private void Remnants_FormClosed(object sender, FormClosedEventArgs e)
         {
             After_authorization_forms.Warehouse warehouse = new After_authorization_forms.Warehouse();
