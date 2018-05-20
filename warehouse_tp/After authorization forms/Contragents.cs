@@ -8,23 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace warehouse_tp
+namespace warehouse_tp.After_authorization_forms
 {
-    public partial class Shop : Form
+    public partial class Contragents : Form
     {
-        public Shop()
+        public Contragents()
         {
             InitializeComponent();
         }
 
-        private void button_in_Click(object sender, EventArgs e)
+        private void Contragents_FormClosed(object sender, FormClosedEventArgs e)
         {
-
-        }
-
-        private void button_out_Click(object sender, EventArgs e)
-        {
-
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
         }
     }
 }

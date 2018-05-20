@@ -104,6 +104,7 @@
             this.Controls.Add(this.textBox_login);
             this.Name = "LoginForm";
             this.Text = "Авторизация";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LoginForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

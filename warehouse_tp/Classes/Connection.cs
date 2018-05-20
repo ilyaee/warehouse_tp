@@ -17,7 +17,7 @@ namespace warehouse_tp
         public static DataSet ds;/* = new DataSet();*/
         public static MySqlDataAdapter adapter;
 
-
+#region EmployeesForAdmin
         public static void ShowAllEmployees()
         {
             adapter = new MySqlDataAdapter(Queries.ShowAllEmployees, connection);
@@ -54,9 +54,11 @@ namespace warehouse_tp
             cmd.ExecuteNonQuery();
             connection.Close();
         }
+#endregion
 
-        public static bool PasswordCheck(string Login, string InputPass)
+        public static bool PasswordCheck(string Login, string InputPass, out string prefix)
         {
+            prefix = null;
             var cmd = new MySqlCommand(Queries.PasswordCheck, connection);
             cmd.Parameters.AddWithValue("@login", Login);
             cmd.Parameters.AddWithValue("@password", Authentication.Hash(InputPass)); //передаем хешированный пароль
@@ -67,6 +69,7 @@ namespace warehouse_tp
             adapter.Fill(dt);
             if (dt.Rows[0][0].ToString() != null)
             {
+                prefix = Login.Substring(0, 2);
                 connection.Close();
                 return true;
             }

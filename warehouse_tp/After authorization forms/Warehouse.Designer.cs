@@ -1,6 +1,6 @@
-﻿namespace warehouse_tp
+﻿namespace warehouse_tp.After_authorization_forms
 {
-    partial class Shop
+    partial class Warehouse
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,14 @@
         {
             this.button_in = new System.Windows.Forms.Button();
             this.button_out = new System.Windows.Forms.Button();
+            this.button_remnants = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button_in
             // 
             this.button_in.Location = new System.Drawing.Point(12, 12);
             this.button_in.Name = "button_in";
-            this.button_in.Size = new System.Drawing.Size(258, 62);
+            this.button_in.Size = new System.Drawing.Size(239, 31);
             this.button_in.TabIndex = 0;
             this.button_in.Text = "Приход";
             this.button_in.UseVisualStyleBackColor = true;
@@ -44,23 +45,35 @@
             // 
             // button_out
             // 
-            this.button_out.Location = new System.Drawing.Point(12, 80);
+            this.button_out.Location = new System.Drawing.Point(12, 49);
             this.button_out.Name = "button_out";
-            this.button_out.Size = new System.Drawing.Size(258, 62);
+            this.button_out.Size = new System.Drawing.Size(239, 31);
             this.button_out.TabIndex = 1;
             this.button_out.Text = "Реализация";
             this.button_out.UseVisualStyleBackColor = true;
             this.button_out.Click += new System.EventHandler(this.button_out_Click);
             // 
-            // Shop
+            // button_remnants
+            // 
+            this.button_remnants.Location = new System.Drawing.Point(12, 118);
+            this.button_remnants.Name = "button_remnants";
+            this.button_remnants.Size = new System.Drawing.Size(239, 31);
+            this.button_remnants.TabIndex = 2;
+            this.button_remnants.Text = "Остатки";
+            this.button_remnants.UseVisualStyleBackColor = true;
+            this.button_remnants.Click += new System.EventHandler(this.button_remnants_Click);
+            // 
+            // Warehouse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(290, 163);
+            this.ClientSize = new System.Drawing.Size(263, 161);
+            this.Controls.Add(this.button_remnants);
             this.Controls.Add(this.button_out);
             this.Controls.Add(this.button_in);
-            this.Name = "Shop";
-            this.Text = "Магазин";
+            this.Name = "Warehouse";
+            this.Text = "Warehouse";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Warehouse_FormClosed);
             this.ResumeLayout(false);
 
         }
@@ -69,5 +82,6 @@
 
         private System.Windows.Forms.Button button_in;
         private System.Windows.Forms.Button button_out;
+        private System.Windows.Forms.Button button_remnants;
     }
 }

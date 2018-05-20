@@ -15,18 +15,46 @@ namespace warehouse_tp
         public LoginForm()
         {
             InitializeComponent();
+            AcceptButton = button_login;
         }
 
+        //wh-склад
+        //co-контрагенты
+        //ad-окно управления
+
+        private string prefix;
         private void button_login_Click(object sender, EventArgs e)
         {
-            if (Connection.PasswordCheck(textBox_login.Text, textBox_password.Text))
+            if (Connection.PasswordCheck(textBox_login.Text, textBox_password.Text, out prefix))
             {
-                this.Hide();
-                AdminForm adminForm = new AdminForm();  //позже накинуть проверки на символы и распределить окна
-                adminForm.Show();
+                if (prefix == "ad")
+                {
+                    this.Hide();
+                    AdminForm adminForm = new AdminForm();
+                    adminForm.Show();
+                }
+                if (prefix == "wh")
+                {
+                    this.Hide();
+                    After_authorization_forms.Warehouse warehouse = new After_authorization_forms.Warehouse();
+                    warehouse.Show();
+                }
+                
+                if (prefix == "co")
+                {
+                    this.Hide();
+                    After_authorization_forms.Contragents contragents = new After_authorization_forms.Contragents();
+                    contragents.Show();
+                }
             }
             else
                 MessageBox.Show("Неверный пароль");
+
+        }
+
+        private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

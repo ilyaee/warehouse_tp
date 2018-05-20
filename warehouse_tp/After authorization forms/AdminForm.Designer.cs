@@ -32,6 +32,7 @@
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.groupBox_AddUpdate = new System.Windows.Forms.GroupBox();
+            this.tb_hashpass = new System.Windows.Forms.TextBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.tb_password = new System.Windows.Forms.TextBox();
@@ -39,7 +40,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.labelLogin = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.tb_hashpass = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).BeginInit();
             this.groupBox_AddUpdate.SuspendLayout();
             this.SuspendLayout();
@@ -89,6 +89,14 @@
             this.groupBox_AddUpdate.TabIndex = 3;
             this.groupBox_AddUpdate.TabStop = false;
             this.groupBox_AddUpdate.Text = "Добавление / изменение данных";
+            // 
+            // tb_hashpass
+            // 
+            this.tb_hashpass.Enabled = false;
+            this.tb_hashpass.Location = new System.Drawing.Point(6, 153);
+            this.tb_hashpass.Name = "tb_hashpass";
+            this.tb_hashpass.Size = new System.Drawing.Size(307, 22);
+            this.tb_hashpass.TabIndex = 6;
             // 
             // btnUpdate
             // 
@@ -152,14 +160,6 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // tb_hashpass
-            // 
-            this.tb_hashpass.Enabled = false;
-            this.tb_hashpass.Location = new System.Drawing.Point(6, 153);
-            this.tb_hashpass.Name = "tb_hashpass";
-            this.tb_hashpass.Size = new System.Drawing.Size(307, 22);
-            this.tb_hashpass.TabIndex = 6;
-            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -172,6 +172,7 @@
             this.Controls.Add(this.dgvEmployees);
             this.Name = "AdminForm";
             this.Text = "AdminForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AdminForm_FormClosed);
             this.Load += new System.EventHandler(this.AdminForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).EndInit();
             this.groupBox_AddUpdate.ResumeLayout(false);

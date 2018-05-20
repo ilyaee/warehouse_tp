@@ -76,8 +76,14 @@ namespace warehouse_tp
         {
             for (int i = 0; i < dgvEmployees.RowCount; i++)
                 if (dgvEmployees.Rows[i].Cells[1].Value.ToString().ToLower().Contains(substring) ||
-                                    dgvEmployees.Rows[i].Cells[1].Value.ToString().Contains(substring))
+                                                                dgvEmployees.Rows[i].Cells[1].Value.ToString().Contains(substring))
                     dgvEmployees.Rows[i].DefaultCellStyle.BackColor = Color.Green;
+        }
+
+        private void AdminForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
         }
     }
 }

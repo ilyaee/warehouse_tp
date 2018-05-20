@@ -10,7 +10,6 @@ namespace warehouse_tp
     class Authentication
     {
         //wh-склад
-        //sh-магазин
         //co-контрагенты
         //admin-окно управления
 

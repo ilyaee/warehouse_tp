@@ -61,14 +61,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminForm.cs">
+    <Compile Include="After authorization forms\AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminForm.Designer.cs">
+    <Compile Include="After authorization forms\AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Authentication.cs" />
-    <Compile Include="Connection.cs" />
+    <Compile Include="After authorization forms\Contragents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="After authorization forms\Contragents.Designer.cs">
+      <DependentUpon>Contragents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="After authorization forms\Warehouse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="After authorization forms\Warehouse.Designer.cs">
+      <DependentUpon>Warehouse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="After warehouse form\IntoWarehouse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="After warehouse form\IntoWarehouse.Designer.cs">
+      <DependentUpon>IntoWarehouse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="After warehouse form\OutWarehouse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="After warehouse form\OutWarehouse.Designer.cs">
+      <DependentUpon>OutWarehouse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="After warehouse form\Remnants.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="After warehouse form\Remnants.Designer.cs">
+      <DependentUpon>Remnants.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Authentication.cs" />
+    <Compile Include="Classes\Connection.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,15 +107,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Queries.cs" />
-    <Compile Include="Shop.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Shop.Designer.cs">
-      <DependentUpon>Shop.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="AdminForm.resx">
+    <Compile Include="Classes\Queries.cs" />
+    <EmbeddedResource Include="After authorization forms\AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="After authorization forms\Contragents.resx">
+      <DependentUpon>Contragents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="After authorization forms\Warehouse.resx">
+      <DependentUpon>Warehouse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="After warehouse form\IntoWarehouse.resx">
+      <DependentUpon>IntoWarehouse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="After warehouse form\OutWarehouse.resx">
+      <DependentUpon>OutWarehouse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="After warehouse form\Remnants.resx">
+      <DependentUpon>Remnants.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -99,9 +138,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Shop.resx">
-      <DependentUpon>Shop.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -118,5 +154,6 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
