@@ -25,7 +25,7 @@ namespace warehouse_tp
         private string prefix;
         private void button_login_Click(object sender, EventArgs e)
         {
-            if (Connection.PasswordCheck(textBox_login.Text, textBox_password.Text, out prefix))
+            if (textBox_login.Text != null && textBox_password.Text != "" && Connection.PasswordCheck(textBox_login.Text, textBox_password.Text, out prefix))
             {
                 if (prefix == "ad")
                 {
@@ -43,12 +43,12 @@ namespace warehouse_tp
                 if (prefix == "co")
                 {
                     this.Hide();
-                    After_authorization_forms.Contragents contragents = new After_authorization_forms.Contragents();
+                    After_authorization_forms.Contractors contragents = new After_authorization_forms.Contractors();
                     contragents.Show();
                 }
             }
             else
-                MessageBox.Show("Неверный пароль");
+                MessageBox.Show("Неверный ввод");
 
         }
 

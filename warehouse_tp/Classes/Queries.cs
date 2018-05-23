@@ -22,7 +22,18 @@ namespace warehouse_tp
 
         public static string ShowRemnants = "select product.name, product.price, product_in_warehouse.current_count, product_in_warehouse.warehouse_id, warehouse.warehouse_address " +
             "from tp.product, tp.product_in_warehouse, tp.warehouse " +
-            "where product.id = product_in_warehouse.product_id and product.id = warehouse.id";
+            "where product.id = product_in_warehouse.product_id and product.id = warehouse.id;";
 
+        public static string ShowAllContractors = "select * from tp.contractor;";
+
+        public static string ShowRemnantsForWarehouseIn = "select product.name, product_in_warehouse.current_count " +
+            "from tp.product, tp.product_in_warehouse " +
+            "where product.id = product_in_warehouse.product_id;";
+
+        //public static string ShowProductsNames = "select product.name from tp.product;";
+
+        public static string ProductNameCheck = "select true from tp.product where product.name = @name";
+
+        public static string ProductCountUpdate = "";
     }
 }

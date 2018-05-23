@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace warehouse_tp.After_authorization_forms
 {
-    public partial class Contragents : Form
+    public partial class Contractors : Form
     {
-        public Contragents()
+        public Contractors()
         {
             InitializeComponent();
         }
@@ -21,6 +21,12 @@ namespace warehouse_tp.After_authorization_forms
         {
             LoginForm loginForm = new LoginForm();
             loginForm.Show();
+        }
+
+        private void Contragents_Load(object sender, EventArgs e)
+        {
+            Connection.ShowContractors();
+            datagv_contractors.DataSource = Connection.ds.Tables[0];
         }
     }
 }

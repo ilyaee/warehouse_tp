@@ -17,7 +17,7 @@ namespace warehouse_tp
         public static DataSet ds;/* = new DataSet();*/
         public static MySqlDataAdapter adapter;
 
-#region EmployeesForAdmin
+        #region EmployeesForAdmin
         public static void ShowAllEmployees()
         {
             adapter = new MySqlDataAdapter(Queries.ShowAllEmployees, connection);
@@ -54,7 +54,7 @@ namespace warehouse_tp
             cmd.ExecuteNonQuery();
             connection.Close();
         }
-#endregion
+        #endregion
 
         public static bool PasswordCheck(string Login, string InputPass, out string prefix)
         {
@@ -67,17 +67,20 @@ namespace warehouse_tp
             adapter = new MySqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
-            if (dt.Rows[0][0].ToString() != null)
+            bool ok;
+            try
             {
-                prefix = Login.Substring(0, 2);
-                connection.Close();
-                return true;
+                ok = dt.Rows[0][0].ToString() != null;
             }
-            else
+            catch (IndexOutOfRangeException)
             {
                 connection.Close();
                 return false;
             }
+
+            prefix = Login.Substring(0, 2);
+            connection.Close();
+            return true;
         }
 
         public static void ShowRemnants()
@@ -86,5 +89,46 @@ namespace warehouse_tp
             ds = new DataSet();
             adapter.Fill(ds);
         }
+
+        public static void ShowContractors()
+        {
+            adapter = new MySqlDataAdapter(Queries.ShowAllContractors, connection);
+            ds = new DataSet();
+            adapter.Fill(ds);
+        }
+
+        public static void ShowRemnantsForWarehouseIn()
+        {
+            adapter = new MySqlDataAdapter(Queries.ShowRemnantsForWarehouseIn, connection);
+            ds = new DataSet();
+            adapter.Fill(ds);
+        }
+
+        public static bool ProductNameCheck(string ProductName)
+        {
+            var cmd = new MySqlCommand(Queries.ProductNameCheck, connection);
+            cmd.Parameters.AddWithValue("@name", ProductName);
+            connection.Open();
+            cmd.ExecuteNonQuery();
+            adapter = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+
+            bool ok;
+            try
+            {
+                ok = dt.Rows[0][0].ToString() != null;
+            }
+            catch (IndexOutOfRangeException)
+            {
+                connection.Close();
+                return false;
+            }
+
+            connection.Close();
+            return true;
+        }
+
+        public static void Update
     }
 }
