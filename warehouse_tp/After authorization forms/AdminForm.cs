@@ -17,7 +17,7 @@ namespace warehouse_tp
             InitializeComponent();
         }
 
-        int SelectedRow;
+        private int SelectedRow;
 
         private void AdminForm_Load(object sender, EventArgs e)
         {

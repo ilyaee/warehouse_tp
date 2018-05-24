@@ -129,6 +129,89 @@ namespace warehouse_tp
             return true;
         }
 
-        public static void Update
+        public static void ProductCountAndPriceUpdate(string ProductName, int count, double price)
+        {
+            //получаем id продукта и его текущее количество на складе
+            var cmd = new MySqlCommand(Queries.GetProductId, connection);
+            cmd.Parameters.AddWithValue("@name", ProductName);
+            connection.Open();
+            cmd.ExecuteNonQuery();
+            adapter = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            int ProductId = Convert.ToInt32(dt.Rows[0][0]);
+            int OldCount = Convert.ToInt32(dt.Rows[0][1]);
+            connection.Close();
+            
+            //обновляем количество на складе 
+            cmd = new MySqlCommand(Queries.ProductCountAndPriceUpdate, connection);
+            cmd.Parameters.AddWithValue("@count", count + OldCount);
+            cmd.Parameters.AddWithValue("@id", ProductId);
+            cmd.Parameters.AddWithValue("@price", price * 1.3);
+            connection.Open();
+            cmd.ExecuteNonQuery();
+            connection.Close();
+        }
+
+        public static void AddNewProduct(string name, int count, double price)
+        {
+            var cmd = new MySqlCommand(Queries.AddNewProduct, connection);
+            cmd.Parameters.AddWithValue("@name", name);
+            cmd.Parameters.AddWithValue("@count", count);
+            cmd.Parameters.AddWithValue("@price", price * 1.3);
+            connection.Open();
+            cmd.ExecuteNonQuery();
+            connection.Close();
+        }
+
+        public static void AddNewContractor(string fio, string role)
+        {
+            var cmd = new MySqlCommand(Queries.AddNewContractor, connection);
+            cmd.Parameters.AddWithValue("@fio", fio);
+            cmd.Parameters.AddWithValue("@role", role);
+            connection.Open();
+            cmd.ExecuteNonQuery();
+            connection.Close();
+        }
+
+        public static void ContractorUpdate(string OldFio, string NewFio, string role)
+        {
+            var cmd = new MySqlCommand(Queries.GetContractorId, connection);
+            cmd.Parameters.AddWithValue("@fio", OldFio);
+            connection.Open();
+            cmd.ExecuteNonQuery();
+            adapter = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            int ProductId = Convert.ToInt32(dt.Rows[0][0]);
+            connection.Close();
+
+            cmd = new MySqlCommand(Queries.ContractorUpdate, connection);
+            cmd.Parameters.AddWithValue("@fio", NewFio);
+            cmd.Parameters.AddWithValue("@role", role);
+            cmd.Parameters.AddWithValue("@id", ProductId);
+            connection.Open();
+            cmd.ExecuteNonQuery();
+            connection.Close();
+        }
+
+        public static void DeleteContractor(string fio)
+        {
+            var cmd = new MySqlCommand(Queries.GetContractorId, connection);
+            cmd.Parameters.AddWithValue("@fio", fio);
+            connection.Open();
+            cmd.ExecuteNonQuery();
+            adapter = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            int ProductId = Convert.ToInt32(dt.Rows[0][0]);
+            connection.Close();
+
+            cmd = new MySqlCommand(Queries.DeleteContractor, connection);
+            cmd.Parameters.AddWithValue("@id", ProductId);
+            connection.Open();
+            cmd.ExecuteNonQuery();
+            connection.Close();
+        }
     }
 }

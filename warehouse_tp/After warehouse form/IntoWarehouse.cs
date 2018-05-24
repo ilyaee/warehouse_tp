@@ -25,7 +25,7 @@ namespace warehouse_tp.After_warehouse_form
 
         private void IntoWarehouse_Load(object sender, EventArgs e)
         {
-            datagv_cust.ColumnCount = 2;
+            datagv_cust.ColumnCount = 3;
             Connection.ShowRemnantsForWarehouseIn();
             datagv_warehouse.DataSource = Connection.ds.Tables[0];
             //Connection.ShowProductsNames();
@@ -38,11 +38,17 @@ namespace warehouse_tp.After_warehouse_form
             {
                 if (Connection.ProductNameCheck(datagv_cust.Rows[i].Cells[0].Value.ToString()))
                 {
-                    //update
+                    Connection.ProductCountAndPriceUpdate(datagv_cust.Rows[i].Cells[0].Value.ToString(), Convert.ToInt32(datagv_cust.Rows[i].Cells[1].Value), Convert.ToDouble(datagv_cust.Rows[i].Cells[2].Value));
+
+                    Connection.ShowRemnantsForWarehouseIn();
+                    datagv_warehouse.DataSource = Connection.ds.Tables[0];
                 }
                 else
                 {
-                    //add
+                    Connection.AddNewProduct(datagv_cust.Rows[i].Cells[0].Value.ToString(), Convert.ToInt32(datagv_cust.Rows[i].Cells[1].Value), Convert.ToDouble(datagv_cust.Rows[i].Cells[2].Value));
+
+                    Connection.ShowRemnantsForWarehouseIn();
+                    datagv_warehouse.DataSource = Connection.ds.Tables[0];
                 }
             }
         }
