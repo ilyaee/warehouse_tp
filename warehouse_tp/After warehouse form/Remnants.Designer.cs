@@ -42,14 +42,14 @@
             this.datagv_remnants.ReadOnly = true;
             this.datagv_remnants.RowHeadersVisible = false;
             this.datagv_remnants.RowTemplate.Height = 24;
-            this.datagv_remnants.Size = new System.Drawing.Size(540, 387);
+            this.datagv_remnants.Size = new System.Drawing.Size(897, 432);
             this.datagv_remnants.TabIndex = 0;
             // 
             // Remnants
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(570, 420);
+            this.ClientSize = new System.Drawing.Size(921, 456);
             this.Controls.Add(this.datagv_remnants);
             this.Name = "Remnants";
             this.Text = "Remnants";

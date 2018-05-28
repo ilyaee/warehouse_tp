@@ -152,9 +152,9 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(740, 40);
+            this.btnDelete.Location = new System.Drawing.Point(727, 40);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 24);
+            this.btnDelete.Size = new System.Drawing.Size(88, 24);
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Удалить";
             this.btnDelete.UseVisualStyleBackColor = true;

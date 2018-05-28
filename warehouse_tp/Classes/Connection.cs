@@ -213,5 +213,28 @@ namespace warehouse_tp
             cmd.ExecuteNonQuery();
             connection.Close();
         }
+
+        public static void UpdateForWarehouseOut(string ProductName, int count, double price)
+        {
+            //получаем id продукта и его текущее количество на складе
+            var cmd = new MySqlCommand(Queries.GetProductId, connection);
+            cmd.Parameters.AddWithValue("@name", ProductName);
+            connection.Open();
+            cmd.ExecuteNonQuery();
+            adapter = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            int ProductId = Convert.ToInt32(dt.Rows[0][0]);
+            int OldCount = Convert.ToInt32(dt.Rows[0][1]);
+            connection.Close();
+
+            cmd = new MySqlCommand(Queries.ProductCountAndPriceUpdate, connection);
+            cmd.Parameters.AddWithValue("@count", OldCount - count);
+            cmd.Parameters.AddWithValue("@id", ProductId);
+            cmd.Parameters.AddWithValue("@price", price);
+            connection.Open();
+            cmd.ExecuteNonQuery();
+            connection.Close();
+        }
     }
 }

@@ -41,7 +41,9 @@ namespace warehouse_tp
        //public static string GetProductCount = "select tp.product_in_warehouse.current_count from tp.product_in_warehouse where tp.product_in_warehouse.product_id = @id;";
 
         public static string ProductCountAndPriceUpdate = "update tp.product_in_warehouse set current_count = @count where tp.product_in_warehouse.product_id = @id;" +
-            "update tp.product set price = @price where tp.product.id = @id";
+            "update tp.product set price = @price where tp.product.id = @id;" +
+            "SET SQL_SAFE_UPDATES = 0;" + 
+            "delete from tp.product_in_warehouse where current_count = 0;";
 
         public static string AddNewProduct = "insert into tp.product(name, price) values (@name, @price);" +
             "insert into tp.product_in_warehouse(product_id, warehouse_id, current_count) values(last_insert_id(), 1, @count);";
@@ -53,5 +55,10 @@ namespace warehouse_tp
         public static string ContractorUpdate = "update tp.contractor set fio = @fio, role = @role where tp.contractor.id = @id;";
 
         public static string DeleteContractor = "delete from tp.contractor where id = @id";
+
+
+
+
+        //public static string UpdateForWarehouseOut = "update tp.product set price";
     }
 }
