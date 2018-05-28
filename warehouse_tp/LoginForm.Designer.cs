@@ -40,9 +40,9 @@
             this.textBox_login.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_login.Location = new System.Drawing.Point(64, 34);
+            this.textBox_login.Location = new System.Drawing.Point(60, 28);
             this.textBox_login.Name = "textBox_login";
-            this.textBox_login.Size = new System.Drawing.Size(135, 22);
+            this.textBox_login.Size = new System.Drawing.Size(232, 22);
             this.textBox_login.TabIndex = 0;
             // 
             // textBox_password
@@ -50,9 +50,9 @@
             this.textBox_password.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_password.Location = new System.Drawing.Point(64, 89);
+            this.textBox_password.Location = new System.Drawing.Point(60, 83);
             this.textBox_password.Name = "textBox_password";
-            this.textBox_password.Size = new System.Drawing.Size(135, 22);
+            this.textBox_password.Size = new System.Drawing.Size(232, 22);
             this.textBox_password.TabIndex = 1;
             // 
             // labelLogin
@@ -61,7 +61,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelLogin.AutoSize = true;
-            this.labelLogin.Location = new System.Drawing.Point(61, 14);
+            this.labelLogin.Location = new System.Drawing.Point(57, 8);
             this.labelLogin.Name = "labelLogin";
             this.labelLogin.Size = new System.Drawing.Size(51, 17);
             this.labelLogin.TabIndex = 2;
@@ -73,7 +73,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelPass.AutoSize = true;
-            this.labelPass.Location = new System.Drawing.Point(61, 69);
+            this.labelPass.Location = new System.Drawing.Point(57, 63);
             this.labelPass.Name = "labelPass";
             this.labelPass.Size = new System.Drawing.Size(61, 17);
             this.labelPass.TabIndex = 3;
@@ -84,9 +84,9 @@
             this.button_login.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_login.Location = new System.Drawing.Point(124, 126);
+            this.button_login.Location = new System.Drawing.Point(120, 120);
             this.button_login.Name = "button_login";
-            this.button_login.Size = new System.Drawing.Size(75, 23);
+            this.button_login.Size = new System.Drawing.Size(172, 34);
             this.button_login.TabIndex = 4;
             this.button_login.Text = "Войти";
             this.button_login.UseVisualStyleBackColor = true;
@@ -96,7 +96,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(264, 169);
+            this.ClientSize = new System.Drawing.Size(361, 166);
             this.Controls.Add(this.button_login);
             this.Controls.Add(this.labelPass);
             this.Controls.Add(this.labelLogin);

@@ -52,8 +52,9 @@
             this.dgvEmployees.Location = new System.Drawing.Point(12, 70);
             this.dgvEmployees.Name = "dgvEmployees";
             this.dgvEmployees.ReadOnly = true;
+            this.dgvEmployees.RowHeadersVisible = false;
             this.dgvEmployees.RowTemplate.Height = 24;
-            this.dgvEmployees.Size = new System.Drawing.Size(803, 535);
+            this.dgvEmployees.Size = new System.Drawing.Size(564, 535);
             this.dgvEmployees.TabIndex = 0;
             this.dgvEmployees.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmployees_CellClick);
             // 
@@ -83,7 +84,7 @@
             this.groupBox_AddUpdate.Controls.Add(this.tb_login);
             this.groupBox_AddUpdate.Controls.Add(this.label2);
             this.groupBox_AddUpdate.Controls.Add(this.labelLogin);
-            this.groupBox_AddUpdate.Location = new System.Drawing.Point(848, 70);
+            this.groupBox_AddUpdate.Location = new System.Drawing.Point(599, 40);
             this.groupBox_AddUpdate.Name = "groupBox_AddUpdate";
             this.groupBox_AddUpdate.Size = new System.Drawing.Size(319, 220);
             this.groupBox_AddUpdate.TabIndex = 3;
@@ -100,9 +101,9 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(108, 180);
+            this.btnUpdate.Location = new System.Drawing.Point(135, 180);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(87, 26);
+            this.btnUpdate.Size = new System.Drawing.Size(100, 26);
             this.btnUpdate.TabIndex = 5;
             this.btnUpdate.Text = "Изменить";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -112,7 +113,7 @@
             // 
             this.btnAdd.Location = new System.Drawing.Point(6, 181);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(87, 25);
+            this.btnAdd.Size = new System.Drawing.Size(100, 25);
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "Добавить";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -152,7 +153,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(727, 40);
+            this.btnDelete.Location = new System.Drawing.Point(488, 40);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(88, 24);
             this.btnDelete.TabIndex = 4;
@@ -164,14 +165,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1179, 684);
+            this.ClientSize = new System.Drawing.Size(941, 638);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.groupBox_AddUpdate);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.tbSearch);
             this.Controls.Add(this.dgvEmployees);
             this.Name = "AdminForm";
-            this.Text = "AdminForm";
+            this.Text = "Администрирование";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AdminForm_FormClosed);
             this.Load += new System.EventHandler(this.AdminForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).EndInit();

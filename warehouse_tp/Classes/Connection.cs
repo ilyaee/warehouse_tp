@@ -14,7 +14,7 @@ namespace warehouse_tp
     {
         static string connectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
         public static MySqlConnection connection = new MySqlConnection(connectionString);
-        public static DataSet ds;/* = new DataSet();*/
+        public static DataSet ds;
         public static MySqlDataAdapter adapter;
 
         #region EmployeesForAdmin

@@ -19,10 +19,19 @@ namespace warehouse_tp
 
         private int SelectedRow;
 
-        private void AdminForm_Load(object sender, EventArgs e)
+        private void RefreshTable()
         {
             Connection.ShowAllEmployees();
             dgvEmployees.DataSource = Connection.ds.Tables[0];
+            dgvEmployees.Columns[0].HeaderText = "ID";
+            dgvEmployees.Columns[1].HeaderText = "Логин";
+            dgvEmployees.Columns[2].HeaderText = "Пароль";
+        }
+
+        private void AdminForm_Load(object sender, EventArgs e)
+        {
+            RefreshTable();
+            dgvEmployees.Columns[2].Width = 220;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -30,8 +39,7 @@ namespace warehouse_tp
             if (tb_login.TextLength <= 30 && tb_password.TextLength <= 150)
             {
                 Connection.AddEmployee(tb_login.Text, tb_password.Text);
-                Connection.ShowAllEmployees();
-                dgvEmployees.DataSource = Connection.ds.Tables[0];
+                RefreshTable();
             }
             else
                 MessageBox.Show("Некорректный ввод");
@@ -43,8 +51,7 @@ namespace warehouse_tp
             {
                 Connection.UpdateEmployee(tb_login.Text, tb_password.Text, 
                                                 Convert.ToInt32(dgvEmployees.Rows[SelectedRow].Cells[0].Value));
-                Connection.ShowAllEmployees();
-                dgvEmployees.DataSource = Connection.ds.Tables[0];
+                RefreshTable();
             }
             else
                 MessageBox.Show("Некорректный ввод");
@@ -61,8 +68,7 @@ namespace warehouse_tp
         private void btnDelete_Click(object sender, EventArgs e)
         {
             Connection.DeleteEmployee(Convert.ToInt32(dgvEmployees.Rows[SelectedRow].Cells[0].Value));
-            Connection.ShowAllEmployees();
-            dgvEmployees.DataSource = Connection.ds.Tables[0];
+            RefreshTable();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

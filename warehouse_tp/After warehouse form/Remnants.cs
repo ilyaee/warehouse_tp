@@ -21,6 +21,11 @@ namespace warehouse_tp.After_warehouse_form
         {
             Connection.ShowRemnants();
             datagv_remnants.DataSource = Connection.ds.Tables[0];
+            datagv_remnants.Columns[0].HeaderText = "Наименование";
+            datagv_remnants.Columns[1].HeaderText = "Цена";
+            datagv_remnants.Columns[2].HeaderText = "Количество";
+            datagv_remnants.Columns[3].HeaderText = "ID склада";
+            datagv_remnants.Columns[4].HeaderText = "Адрес склада";
         }
 
         private void Remnants_FormClosed(object sender, FormClosedEventArgs e)

@@ -41,12 +41,11 @@
             // 
             this.datagv_cust.AllowUserToResizeRows = false;
             this.datagv_cust.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagv_cust.ColumnHeadersVisible = false;
             this.datagv_cust.Location = new System.Drawing.Point(12, 30);
             this.datagv_cust.Name = "datagv_cust";
             this.datagv_cust.RowHeadersVisible = false;
             this.datagv_cust.RowTemplate.Height = 24;
-            this.datagv_cust.Size = new System.Drawing.Size(416, 425);
+            this.datagv_cust.Size = new System.Drawing.Size(404, 425);
             this.datagv_cust.TabIndex = 0;
             // 
             // datagv_warehouse
@@ -59,7 +58,7 @@
             this.datagv_warehouse.ReadOnly = true;
             this.datagv_warehouse.RowHeadersVisible = false;
             this.datagv_warehouse.RowTemplate.Height = 24;
-            this.datagv_warehouse.Size = new System.Drawing.Size(420, 425);
+            this.datagv_warehouse.Size = new System.Drawing.Size(404, 425);
             this.datagv_warehouse.TabIndex = 1;
             // 
             // label1
@@ -102,7 +101,7 @@
             this.Controls.Add(this.datagv_warehouse);
             this.Controls.Add(this.datagv_cust);
             this.Name = "IntoWarehouse";
-            this.Text = "IntoWarehouse";
+            this.Text = "Приход";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.IntoWarehouse_FormClosed);
             this.Load += new System.EventHandler(this.IntoWarehouse_Load);
             ((System.ComponentModel.ISupportInitialize)(this.datagv_cust)).EndInit();

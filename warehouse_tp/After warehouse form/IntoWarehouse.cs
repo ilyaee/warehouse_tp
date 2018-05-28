@@ -17,6 +17,15 @@ namespace warehouse_tp.After_warehouse_form
             InitializeComponent();
         }
 
+        private void RefreshTable()
+        {
+            Connection.ShowRemnantsForWarehouseIn();
+            datagv_warehouse.DataSource = Connection.ds.Tables[0];
+            datagv_warehouse.Columns[0].HeaderText = datagv_cust.Columns[0].HeaderText = "Наименование";
+            datagv_warehouse.Columns[1].HeaderText = datagv_cust.Columns[1].HeaderText = "Количество";
+            datagv_warehouse.Columns[2].HeaderText = datagv_cust.Columns[2].HeaderText = "Цена";
+        }
+
         private void IntoWarehouse_FormClosed(object sender, FormClosedEventArgs e)
         {
             After_authorization_forms.Warehouse warehouse = new After_authorization_forms.Warehouse();
@@ -26,10 +35,7 @@ namespace warehouse_tp.After_warehouse_form
         private void IntoWarehouse_Load(object sender, EventArgs e)
         {
             datagv_cust.ColumnCount = 3;
-            Connection.ShowRemnantsForWarehouseIn();
-            datagv_warehouse.DataSource = Connection.ds.Tables[0];
-            //Connection.ShowProductsNames();
-            //datagv_cust.DataSource = Connection.ds.Tables[0];
+            RefreshTable();
         }
 
         private void button_totheBase_Click(object sender, EventArgs e)

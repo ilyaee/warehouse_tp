@@ -23,8 +23,10 @@ namespace warehouse_tp.After_warehouse_form
         {
             Connection.ShowRemnantsForWarehouseIn();
             datagv_warehouse.DataSource = Connection.ds.Tables[0];
-            datagv_warehouse.AutoResizeColumns(); //исправить
+            //datagv_warehouse.AutoResizeColumns(); //исправить
             datagv_warehouse.Columns[0].HeaderText = datagv_cust.Columns[0].HeaderText = "Наименование";
+            datagv_warehouse.Columns[1].HeaderText = datagv_cust.Columns[1].HeaderText = "Количество";
+            datagv_warehouse.Columns[2].HeaderText = datagv_cust.Columns[2].HeaderText = "Цена";
         }
 
         private void OutWarehouse_Load(object sender, EventArgs e)

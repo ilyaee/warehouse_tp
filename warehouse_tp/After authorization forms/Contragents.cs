@@ -25,6 +25,8 @@ namespace warehouse_tp.After_authorization_forms
         {
             Connection.ShowContractors();
             datagv_contractors.DataSource = Connection.ds.Tables[0];
+            datagv_contractors.Columns[0].Width = 200;
+            datagv_contractors.Columns[1].Width = 80;
         }
 
         private void Contragents_FormClosed(object sender, FormClosedEventArgs e)
@@ -35,8 +37,7 @@ namespace warehouse_tp.After_authorization_forms
 
         private void Contragents_Load(object sender, EventArgs e)
         {
-            Connection.ShowContractors();
-            datagv_contractors.DataSource = Connection.ds.Tables[0];
+            RefreshTable();
             comboBox_roles.Items.AddRange(roles_arr);
             comboBox_roles.SelectedIndex = 0;
         }
