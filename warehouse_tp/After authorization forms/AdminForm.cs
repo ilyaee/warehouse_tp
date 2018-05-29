@@ -61,7 +61,7 @@ namespace warehouse_tp
         {
             SelectedRow = e.RowIndex;
             tb_login.Text = dgvEmployees.Rows[SelectedRow].Cells[1].Value.ToString();
-            tb_hashpass.Text = dgvEmployees.Rows[SelectedRow].Cells[2].Value.ToString();
+            //tb_hashpass.Text = dgvEmployees.Rows[SelectedRow].Cells[2].Value.ToString();
             //tb_password.Text = Authentication.UnHash(tb_hashpass.Text);  //раскодированный пароль
         }
 

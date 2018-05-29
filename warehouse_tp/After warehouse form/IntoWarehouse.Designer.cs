@@ -45,7 +45,7 @@
             this.datagv_cust.Name = "datagv_cust";
             this.datagv_cust.RowHeadersVisible = false;
             this.datagv_cust.RowTemplate.Height = 24;
-            this.datagv_cust.Size = new System.Drawing.Size(404, 425);
+            this.datagv_cust.Size = new System.Drawing.Size(451, 425);
             this.datagv_cust.TabIndex = 0;
             // 
             // datagv_warehouse
@@ -58,7 +58,7 @@
             this.datagv_warehouse.ReadOnly = true;
             this.datagv_warehouse.RowHeadersVisible = false;
             this.datagv_warehouse.RowTemplate.Height = 24;
-            this.datagv_warehouse.Size = new System.Drawing.Size(404, 425);
+            this.datagv_warehouse.Size = new System.Drawing.Size(451, 425);
             this.datagv_warehouse.TabIndex = 1;
             // 
             // label1
@@ -82,7 +82,7 @@
             // button_totheBase
             // 
             this.button_totheBase.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_totheBase.Location = new System.Drawing.Point(400, 461);
+            this.button_totheBase.Location = new System.Drawing.Point(421, 461);
             this.button_totheBase.Name = "button_totheBase";
             this.button_totheBase.Size = new System.Drawing.Size(173, 48);
             this.button_totheBase.TabIndex = 11;
@@ -94,7 +94,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1002, 524);
+            this.ClientSize = new System.Drawing.Size(1016, 524);
             this.Controls.Add(this.button_totheBase);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

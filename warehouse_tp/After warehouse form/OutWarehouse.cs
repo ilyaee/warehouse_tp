@@ -27,6 +27,7 @@ namespace warehouse_tp.After_warehouse_form
             datagv_warehouse.Columns[0].HeaderText = datagv_cust.Columns[0].HeaderText = "Наименование";
             datagv_warehouse.Columns[1].HeaderText = datagv_cust.Columns[1].HeaderText = "Количество";
             datagv_warehouse.Columns[2].HeaderText = datagv_cust.Columns[2].HeaderText = "Цена";
+            datagv_cust.Columns[0].Width = datagv_warehouse.Columns[0].Width = 135;
         }
 
         private void OutWarehouse_Load(object sender, EventArgs e)
@@ -63,10 +64,8 @@ namespace warehouse_tp.After_warehouse_form
 
         private void button_ok_Click(object sender, EventArgs e)
         {
-            //bool PriceOk = true;
             bool CountOk = true;
             int CountIndex = 0;
-            //bool EqualCount = false;
             for (int i = 0; i < datagv_cust.RowCount - 1; i++)
             {
                 if (datagv_cust.Rows[i].Cells[1].Value == null || !UInt32.TryParse(datagv_cust.Rows[i].Cells[1].Value.ToString(), out uint res) || res == 0)

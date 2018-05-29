@@ -24,6 +24,7 @@ namespace warehouse_tp.After_warehouse_form
             datagv_warehouse.Columns[0].HeaderText = datagv_cust.Columns[0].HeaderText = "Наименование";
             datagv_warehouse.Columns[1].HeaderText = datagv_cust.Columns[1].HeaderText = "Количество";
             datagv_warehouse.Columns[2].HeaderText = datagv_cust.Columns[2].HeaderText = "Цена";
+            datagv_cust.Columns[0].Width = datagv_warehouse.Columns[0].Width = 135;
         }
 
         private void IntoWarehouse_FormClosed(object sender, FormClosedEventArgs e)
@@ -45,16 +46,12 @@ namespace warehouse_tp.After_warehouse_form
                 if (Connection.ProductNameCheck(datagv_cust.Rows[i].Cells[0].Value.ToString()))
                 {
                     Connection.ProductCountAndPriceUpdate(datagv_cust.Rows[i].Cells[0].Value.ToString(), Convert.ToInt32(datagv_cust.Rows[i].Cells[1].Value), Convert.ToDouble(datagv_cust.Rows[i].Cells[2].Value));
-
-                    Connection.ShowRemnantsForWarehouseIn();
-                    datagv_warehouse.DataSource = Connection.ds.Tables[0];
+                    RefreshTable();
                 }
                 else
                 {
                     Connection.AddNewProduct(datagv_cust.Rows[i].Cells[0].Value.ToString(), Convert.ToInt32(datagv_cust.Rows[i].Cells[1].Value), Convert.ToDouble(datagv_cust.Rows[i].Cells[2].Value));
-
-                    Connection.ShowRemnantsForWarehouseIn();
-                    datagv_warehouse.DataSource = Connection.ds.Tables[0];
+                    RefreshTable();
                 }
             }
         }

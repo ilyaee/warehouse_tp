@@ -26,6 +26,7 @@ namespace warehouse_tp.After_warehouse_form
             datagv_remnants.Columns[2].HeaderText = "Количество";
             datagv_remnants.Columns[3].HeaderText = "ID склада";
             datagv_remnants.Columns[4].HeaderText = "Адрес склада";
+            datagv_remnants.Columns[0].Width = 150;
         }
 
         private void Remnants_FormClosed(object sender, FormClosedEventArgs e)

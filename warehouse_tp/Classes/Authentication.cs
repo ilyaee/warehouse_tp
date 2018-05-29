@@ -9,18 +9,6 @@ namespace warehouse_tp
 {
     class Authentication
     {
-        //wh-склад
-        //co-контрагенты
-        //admin-окно управления
-
-        #region Fields
-        private string _login;
-        private string _password;
-
-        public string Password { get => _password; set => _password = value; }
-        public string Login { get => _login; set => _login = value; }
-        #endregion
-
         private static string hash = "f0xle@rn";   //it's a magic
 
         /// <summary>

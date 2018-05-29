@@ -41,14 +41,13 @@
             // 
             this.datagv_warehouse.AllowUserToAddRows = false;
             this.datagv_warehouse.AllowUserToDeleteRows = false;
-            this.datagv_warehouse.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.datagv_warehouse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datagv_warehouse.Location = new System.Drawing.Point(12, 28);
             this.datagv_warehouse.Name = "datagv_warehouse";
             this.datagv_warehouse.ReadOnly = true;
             this.datagv_warehouse.RowHeadersVisible = false;
             this.datagv_warehouse.RowTemplate.Height = 24;
-            this.datagv_warehouse.Size = new System.Drawing.Size(346, 438);
+            this.datagv_warehouse.Size = new System.Drawing.Size(451, 438);
             this.datagv_warehouse.TabIndex = 0;
             this.datagv_warehouse.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagv_warehouse_CellDoubleClick);
             // 
@@ -56,21 +55,20 @@
             // 
             this.datagv_cust.AllowUserToAddRows = false;
             this.datagv_cust.AllowUserToDeleteRows = false;
-            this.datagv_cust.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.datagv_cust.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagv_cust.Location = new System.Drawing.Point(445, 28);
+            this.datagv_cust.Location = new System.Drawing.Point(550, 28);
             this.datagv_cust.Name = "datagv_cust";
             this.datagv_cust.RowHeadersVisible = false;
             this.datagv_cust.RowTemplate.Height = 24;
-            this.datagv_cust.Size = new System.Drawing.Size(346, 438);
+            this.datagv_cust.Size = new System.Drawing.Size(451, 438);
             this.datagv_cust.TabIndex = 1;
             // 
             // button_ok
             // 
             this.button_ok.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_ok.Location = new System.Drawing.Point(341, 471);
+            this.button_ok.Location = new System.Drawing.Point(431, 472);
             this.button_ok.Name = "button_ok";
-            this.button_ok.Size = new System.Drawing.Size(127, 44);
+            this.button_ok.Size = new System.Drawing.Size(155, 44);
             this.button_ok.TabIndex = 2;
             this.button_ok.Text = "Провести";
             this.button_ok.UseVisualStyleBackColor = true;
@@ -88,7 +86,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(442, 8);
+            this.label2.Location = new System.Drawing.Point(547, 8);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 17);
             this.label2.TabIndex = 4;
@@ -98,7 +96,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(807, 528);
+            this.ClientSize = new System.Drawing.Size(1014, 528);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button_ok);

@@ -32,7 +32,6 @@
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.groupBox_AddUpdate = new System.Windows.Forms.GroupBox();
-            this.tb_hashpass = new System.Windows.Forms.TextBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.tb_password = new System.Windows.Forms.TextBox();
@@ -77,7 +76,6 @@
             // 
             // groupBox_AddUpdate
             // 
-            this.groupBox_AddUpdate.Controls.Add(this.tb_hashpass);
             this.groupBox_AddUpdate.Controls.Add(this.btnUpdate);
             this.groupBox_AddUpdate.Controls.Add(this.btnAdd);
             this.groupBox_AddUpdate.Controls.Add(this.tb_password);
@@ -86,22 +84,14 @@
             this.groupBox_AddUpdate.Controls.Add(this.labelLogin);
             this.groupBox_AddUpdate.Location = new System.Drawing.Point(599, 40);
             this.groupBox_AddUpdate.Name = "groupBox_AddUpdate";
-            this.groupBox_AddUpdate.Size = new System.Drawing.Size(319, 220);
+            this.groupBox_AddUpdate.Size = new System.Drawing.Size(319, 195);
             this.groupBox_AddUpdate.TabIndex = 3;
             this.groupBox_AddUpdate.TabStop = false;
             this.groupBox_AddUpdate.Text = "Добавление / изменение данных";
             // 
-            // tb_hashpass
-            // 
-            this.tb_hashpass.Enabled = false;
-            this.tb_hashpass.Location = new System.Drawing.Point(6, 153);
-            this.tb_hashpass.Name = "tb_hashpass";
-            this.tb_hashpass.Size = new System.Drawing.Size(307, 22);
-            this.tb_hashpass.TabIndex = 6;
-            // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(135, 180);
+            this.btnUpdate.Location = new System.Drawing.Point(135, 154);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(100, 26);
             this.btnUpdate.TabIndex = 5;
@@ -111,7 +101,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(6, 181);
+            this.btnAdd.Location = new System.Drawing.Point(6, 155);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(100, 25);
             this.btnAdd.TabIndex = 4;
@@ -196,6 +186,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelLogin;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.TextBox tb_hashpass;
     }
 }
